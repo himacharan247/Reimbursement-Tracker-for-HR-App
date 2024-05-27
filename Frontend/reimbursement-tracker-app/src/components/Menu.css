@@ -1,0 +1,141 @@
+/* Menu.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  padding-top: 20px;
+}
+
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 18px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.center-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand h1 {
+  margin: 0;
+  padding:0;
+  font-size: 1.3em;
+  color: #fff;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+  order: 2;
+}
+
+.menu-icon:hover {
+  transform: scale(1.2);
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.active-link {
+  color: yellow;
+}
+
+.logout-button,
+.profile-dropdown .nav-link,
+.payment-dropdown .nav-link,
+.request-dropdown .nav-link {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.profile-dropdown .dropdown-content,
+.payment-dropdown .dropdown-content,
+.request-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 200px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.profile-dropdown:hover .dropdown-content,
+.payment-dropdown:hover .dropdown-content,
+.request-dropdown:hover .dropdown-content {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.profile-dropdown .dropdown-content .nav-link,
+.payment-dropdown .dropdown-content .nav-link,
+.request-dropdown .dropdown-content .nav-link {
+  display: block;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.profile-dropdown .dropdown-content .nav-link:hover,
+.payment-dropdown .dropdown-content .nav-link:hover,
+.request-dropdown .dropdown-content .nav-link:hover {
+  background-color: #f0f0f0;
+  color: #0066cc;
+}
+
+.active-link,
+.profile-dropdown:hover .nav-link,
+.payment-dropdown:hover .nav-link,
+.request-dropdown:hover .nav-link {
+  color: #1100cc;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-link,
+  .logout-button,
+  .profile-dropdown .nav-link,
+  .payment-dropdown .nav-link,
+  .request-dropdown .nav-link {
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .brand {
+    order: 1;
+    margin-bottom: 10px;
+  }
+
+  .menu-icon {
+    order: 3;
+  }
+}
