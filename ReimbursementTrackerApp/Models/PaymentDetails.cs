@@ -10,7 +10,7 @@ namespace ReimbursementTrackerApp.Models
         public int PaymentId { get; set; }
         public string BankAccountNumber { get; set; }
         public string IFSC { get; set; }
-        public float PaymentAmount { get; set; }
+        public decimal PaymentAmount { get; set; }
         public DateTime PaymentDate { get; set; }
         [ForeignKey("RequestId")]
         public Request? Request { get; set; }
